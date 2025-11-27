@@ -37,6 +37,7 @@ public class UserApiTests {
 		requestBody.put("job", "Software Developer");
 
 		Response response = null;
+		//
 
 		try {
 			response = given().header("x-api-key", "reqres-free-v1")
