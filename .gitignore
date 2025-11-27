@@ -1,0 +1,66 @@
+# ----------------------------------------------------------------------
+# Maven Build Output
+# ----------------------------------------------------------------------
+/target/             # Ignore the standard Maven build output directory
+pom.xml.tag          # Maven files used internally
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-check-report.html  # Generated security reports
+dependency-check-report.json
+checkstyle-results.xml        # Generated checkstyle reports
+failsafe-summary.xml
+
+# ----------------------------------------------------------------------
+# Local IDE Files (IntelliJ, Eclipse, VS Code)
+# ----------------------------------------------------------------------
+
+# IntelliJ IDEA
+.idea/               # Ignore the IntelliJ project settings folder
+*.iml                # Ignore module files
+
+# Eclipse
+.classpath           # Ignore Eclipse classpath settings
+.project             # Ignore Eclipse project settings
+.settings/           # Ignore Eclipse settings directory
+*.prefs
+/bin/                # Ignore output binary folder
+
+# VS Code
+.vscode/
+
+# ----------------------------------------------------------------------
+# Java/JVM Specific
+# ----------------------------------------------------------------------
+*.class              # Compiled class files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+# Log files
+*.log
+# Mobile development
+*.apk
+*.ap_
+# External dependencies (managed by Maven)
+lib/
+/tmp/
+
+# ----------------------------------------------------------------------
+# Operating System & Other generated files
+# ----------------------------------------------------------------------
+.DS_Store            # macOS folder settings
+Thumbs.db            # Windows thumbnail cache
+# History and temp files
+*~
+# Backup files
+#*#
+
+# ----------------------------------------------------------------------
+# TestNG Specific (Optional - If generating reports to project root)
+# ----------------------------------------------------------------------
+# TestNG usually outputs reports inside the /target folder, but if you have a custom setup:
+test-output/         # Default TestNG report output folder
+testng-results.xml   # TestNG report file
