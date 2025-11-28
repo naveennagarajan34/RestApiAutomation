@@ -3,16 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.automation.apitests.UserApiTests">
+      <class name="com.automation.apitests.RestfulApiDevTests">
         <methods>
-          <include name="test_1_createUser"/>
-          <include name="test3_UpdateUserJob"/>
-          <include name="test_2_getUser"/>
-          <include name="setup"/>
-          <include name="test4_DeleteUser"/>
-          <include name="teardown"/>
+          <include name="addProduct"/>
         </methods>
-      </class> <!-- com.automation.apitests.UserApiTests -->
+      </class> <!-- com.automation.apitests.RestfulApiDevTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
