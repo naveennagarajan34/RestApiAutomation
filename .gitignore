@@ -17,7 +17,6 @@ failsafe-summary.xml
 # ----------------------------------------------------------------------
 
 # IntelliJ IDEA
-.idea/               # Ignore the IntelliJ project settings folder
 *.iml                # Ignore module files
 
 # Eclipse
