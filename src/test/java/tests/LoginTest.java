@@ -16,14 +16,15 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import pojo.User;
 import pojo.UserRequest;
+import utils.ConfigReader;
 import utils.EndPoints;
 
 public class LoginTest extends BaseTest {
 	@Test
 	public void testLoginUser() {
 		User user = new User();
-		user.setEmail("naveennagarajan@gmail.com");
-		user.setPassword("Test@123");
+		user.setEmail(ConfigReader.get("email"));
+		user.setPassword(ConfigReader.get("password"));
 
 		UserRequest userReq = new UserRequest();
 		userReq.setUser(user);
