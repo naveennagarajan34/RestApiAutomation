@@ -13,13 +13,14 @@ public class ConfigReader {
 
 	private static Properties prop;
 	/*
-	 * Using try-with-resources avoids resource leaks and makes code concise. In a
-	 * static block, this ensures configuration files are loaded once at class
+	 * Using try-with-resources avoids resource leaks and makes code concise. In
+	 * a static block, this ensures configuration files are loaded once at class
 	 * initialization, with proper exception handling.
 	 */
 
 	static {
-		try (FileInputStream fis = new FileInputStream("src/test/resources/config.properties")) {
+		try (FileInputStream fis = new FileInputStream(
+				"src/test/resources/config.properties")) {
 			prop = new Properties();
 			prop.load(fis);
 		} catch (IOException e) {
@@ -34,7 +35,8 @@ public class ConfigReader {
 	public static void set(String key, String value) {
 		prop = new Properties();
 		prop.setProperty(key, value);
-		try (FileOutputStream fos = new FileOutputStream("src/test/resources/config.properties")) {
+		try (FileOutputStream fos = new FileOutputStream(
+				"src/test/resources/config.properties")) {
 			prop.store(fos, "Updated key-value pair");
 		} catch (IOException e) {
 			e.printStackTrace();

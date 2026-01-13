@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.automation.apitests.RestfulApiDevTests">
+      <class name="tests.LoginTest">
         <methods>
-          <include name="addProduct"/>
+          <include name="testLoginUser"/>
         </methods>
-      </class> <!-- com.automation.apitests.RestfulApiDevTests -->
+      </class> <!-- tests.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
