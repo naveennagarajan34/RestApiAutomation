@@ -14,8 +14,9 @@ import base.BaseTest;
 import io.restassured.path.json.JsonPath;
 import pojo.Article;
 import pojo.ArticleRequest;
+import specs.RequestSpec;
+import specs.ResponseSpec;
 import utils.EndPoints;
-import utils.TokenManager;
 
 public class CreateArticleTest extends BaseTest {
 	private static String slugId;
@@ -37,20 +38,20 @@ public class CreateArticleTest extends BaseTest {
 
 		//@formatter:off
 		String response = 
-		given()
-			.header("Authorization", "Token " + TokenManager.getToken())
-			.contentType("application/json")
-			.body(artReq)
-		.when()
-			.post(EndPoints.ARTICLES)
-		.then().statusCode(201)
-			.body("article.title", equalTo("Title of the Article"))
-			.body("article.tagList", everyItem(anyOf(
-			            equalToIgnoringCase("learn"),
-			            equalToIgnoringCase("rest"),
-			            equalToIgnoringCase("api")
-			    )))
-			.extract().response().asString();
+			given()
+			    .spec(RequestSpec.withAuth())
+			    .body(artReq)
+			.when()
+				.post(EndPoints.ARTICLES)
+			.then().spec(ResponseSpec.status201())
+			
+				.body("article.title", equalTo("Title of the Article"))
+				.body("article.tagList", everyItem(anyOf(
+				            equalToIgnoringCase("learn"),
+				            equalToIgnoringCase("rest"),
+				            equalToIgnoringCase("api")
+				    )))
+				.extract().response().asString();
 		
 		JsonPath jp = new JsonPath(response);
 		slugId = jp.getString("article.slug");
