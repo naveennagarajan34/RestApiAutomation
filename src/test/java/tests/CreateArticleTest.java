@@ -18,7 +18,13 @@ import utils.EndPoints;
 import utils.TokenManager;
 
 public class CreateArticleTest extends BaseTest {
-	@Test
+	private static String slugId;
+
+	public static String getSlugId() {
+		return slugId;
+	}
+
+	@Test(groups = "article")
 	public void createArticle() {
 		Article article = new Article();
 		article.setTitle("Title of the Article");
@@ -45,10 +51,8 @@ public class CreateArticleTest extends BaseTest {
 			            equalToIgnoringCase("api")
 			    )))
 			.extract().response().asString();
-
 		
 		JsonPath jp = new JsonPath(response);
-		System.out.println(jp.getString("article.slug"));
-
+		slugId = jp.getString("article.slug");
 	}
 }
